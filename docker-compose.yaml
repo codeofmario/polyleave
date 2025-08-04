@@ -8,7 +8,10 @@ x-common-env: &env
   DB_USER: ${MYSQL_USER:-app}
   DB_PASS: ${MYSQL_PASSWORD:-secret}
 
-  REDIS_URL: ${REDIS_URL:-redis://redis:6379/0}
+  REDIS_CLIENT: phpredis
+  REDIS_HOST: redis
+  REDIS_PASSWORD: null
+  REDIS_PORT: 6379
 
   JWT_SECRET: ${JWT_SECRET}
   GITHUB_CLIENT_ID: ${GITHUB_CLIENT_ID}
