@@ -39,6 +39,7 @@ export const useAuthStore = defineStore('auth', {
     async finishGithubLogin(code: string, state: string) {
       const { data } = await api.post('/auth/github/callback', { code, state });
       this.setTokens({ access_token: data.access_token, refresh_token: data.refresh_token });
+      await this.fetchMe();
       this.user = data.user;
     },
 
